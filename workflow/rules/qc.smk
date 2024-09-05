@@ -153,10 +153,12 @@ rule rseqc_readqual:
         "results/qc/rseqc/{sample}_{unit}.readqual.Quality_plot.pdf"
     log:
         "logs/rseqc/rseqc_readqual/{sample}_{unit}.log"
+    params:
+        prefix=lambda w, output: output[0].replace(".Quality_plot.pdf", ""),
     conda:
         "../envs/rseqc.yaml"
     shell:
-        "read_quality.py -i {input.bam} -o {output} > {log} 2>&1"
+        "read_quality.py -i {input.bam} -o {params.prefix} > {log} 2>&1"
 
 
 rule multiqc:
