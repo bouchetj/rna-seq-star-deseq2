@@ -53,7 +53,7 @@ diffexp:
       variable_of_interest: Treated
       # must be a level present in the variable_of_interest that is not the
       # base_level specified above
-      level_of_interest: R848 (5mM) for 6 h
+      level_of_interest: R848 (5mM)
   # The default model includes all interactions among variables_of_interest
   # and batch_effects added on. For the example above this implicitly is:
   # model: ~jointly_handled + treatment_1 * treatment_2
