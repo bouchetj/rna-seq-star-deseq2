@@ -3,6 +3,6 @@ channels:
   - bioconda
   - nodefaults
 dependencies:
-  - r-gsva
-  - r-msigdbr
+  - bioconductor-gsva
+  - bioconductor-msigdb
   - r-pheatmap
