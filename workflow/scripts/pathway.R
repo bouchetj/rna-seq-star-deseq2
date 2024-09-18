@@ -3,7 +3,7 @@ library("GSVA")
 library("pheatmap")
 
 species_name <- snakemake@config[["ref"]][["species"]]
-species_name <- gsub("(^|\\s)([a-z])", "\\1\\U\\2", tools::toTitleCase(gsub("_", " ", species_name)), perl=TRUE)
+species_name <- gsub("_", " ", tools::toTitleCase(species_name))
 
 # Load just the Hallmark gene sets from MSigDB
 gene_sets = msigdbr(species = species_name, category = 'H')
@@ -22,7 +22,7 @@ gsva.param <- gsvaParam(as.matrix(norm_counts_log), gmt, kcdf="Poisson")
 data.gsva <- gsva(gsva.param)
 
 # Write it out; look at this table as a heatmap in python
-write.table(data.gsva, 'hallmark_GSVA.csv', sep=',', col.names= NA, file = snakemake@output[[1]])
+write.table(data.gsva, snakemake@output[[1]], sep=',', col.names=NA)
 
 # Save heatmap 
 svg(snakemake@output[[2]])

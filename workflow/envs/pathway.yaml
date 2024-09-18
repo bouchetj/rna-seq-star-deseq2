@@ -4,5 +4,5 @@ channels:
   - nodefaults
 dependencies:
   - bioconductor-gsva
-  - bioconductor-msigdb
+  - r-msigdbr
   - r-pheatmap

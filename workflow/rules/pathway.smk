@@ -2,8 +2,8 @@ rule GSVA:
     input:
         "results/deseq2/normcounts.tsv"
     output:
-        "results/pathway/hallmark_GSVA.csv",
-        "results/pathway/hallmark_GSVA.svg",
+        report("results/pathway/hallmark_GSVA.csv", "../report/gsva.rst"),
+        report("results/pathway/hallmark_GSVA.svg", "../report/heatmap.rst"),
     log:
         "logs/pathway/gsva.log",
     conda:
