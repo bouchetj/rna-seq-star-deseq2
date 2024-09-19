@@ -58,6 +58,10 @@ diffexp:
   # assumptions into your model, by specicifying a different model here.
   model: ~condition
 
+pathway:
+# Generates the Hallmark pathway analysis and heatmap
+  activate: False
+
 params:
   cutadapt-pe: ""
   cutadapt-se: ""
