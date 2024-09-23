@@ -74,6 +74,10 @@ diffexp:
   # model: ~jointly_handled + treatment_1 + treatment_2
   model: ""
 
+pathway:
+# Generates the Hallmark pathway analysis and heatmap
+  activate: True
+
 params:
   cutadapt-pe: ""
   cutadapt-se: ""

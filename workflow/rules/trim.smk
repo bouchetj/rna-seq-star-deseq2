@@ -11,6 +11,8 @@ rule get_sra_pe:
 rule get_sra_se:
     output:
         "sra/{accession}.fastq",
+    wildcard_constraints:
+        accession = "[^_]+"
     log:
         "logs/get-sra/{accession}.log",
     wrapper:
