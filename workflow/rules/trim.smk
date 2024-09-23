@@ -15,6 +15,8 @@ rule get_sra_se:
         "logs/get-sra/{accession}.log",
     wrapper:
         "v3.5.3/bio/sra-tools/fasterq-dump"
+    wildcard_constraints:
+        accession = "[^_]+"
 
 
 rule cutadapt_pipe:
