@@ -11,12 +11,12 @@ rule get_sra_pe:
 rule get_sra_se:
     output:
         "sra/{accession}.fastq",
+    wildcard_constraints:
+        accession = "[^_]+"
     log:
         "logs/get-sra/{accession}.log",
     wrapper:
         "v3.5.3/bio/sra-tools/fasterq-dump"
-    wildcard_constraints:
-        accession = "[^_]+"
 
 
 rule cutadapt_pipe:
